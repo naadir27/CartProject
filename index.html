@@ -14,10 +14,10 @@
 
         <main>
             <!-- Add the Details for the Module -->
-            <h3>Subject:    {{subject}}</h3>
-            <h3>Location:   {{location}}</h3>
-            <h3>Price:      {{price}}</h3>
-            <h3>Spaces:      {{spaces}}</h3>
+            <h3 v-text="subject.name"></h3>
+            <h3 v-text="subject.location"></h3>
+            <h3 v-text="subject.price"></h3>
+            <h3 v-text="subject.spaces"></h3>
 
             <button v-on:click="addToCart">
                 Add to Cart
@@ -33,10 +33,12 @@
             el:'#app',
             data: { 
                 sitename:'Vue.js Math Class',
-                subject: "Math",
+                subject: {
+                name: "Math",
                 location: "London",
                 price:"£100",
                 spaces:5,
+                }
             },
             methods: {
                 addToCart: function() {
