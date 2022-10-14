@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSMAN</title>
+    <title>CART</title>
 </head>
 <body>
+    <div id="app">
+     
+        <p>SUBJECT :{{subject}}</p>
+        <p>LOCATION :{{location}}</p>
+        <p>PRICE:{{price}}</p>
+        <p>SPACES:{{spaces}}</p>
+       
+    </div>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{ 
+                Subject: "Osman Kemboy",
+                Location: "M00888138",
+                Price:"0585762613",
+                Spaces:"Travelling",
+                color :"Blue"
+            }
+        })
+    </script>
+  
+
     
 </body>
 </html>
