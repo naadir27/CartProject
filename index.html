@@ -8,24 +8,41 @@
 <body>
     <div id="app">
      
-        <p>SUBJECT :    {{subject}}</p>
-        <p>LOCATION :   {{location}}</p>
-        <p>PRICE :      {{price}}</p>
-        <p>SPACES :      {{spaces}}</p>
-       
+        <header>
+            <h1 v-text="sitename"></h1>
+        </header>
+
+        <main>
+            <!-- Add the Details for the Module -->
+            <h3>Subject:    {{subject}}</h3>
+            <h3>Location:   {{location}}</h3>
+            <h3>Price:      {{price}}</h3>
+            <h3>Spaces:      {{spaces}}</h3>
+
+            <button v-on:click="addToCart">
+                Add to Cart
+            </button>
+        </main>
+        
     </div>
 
-    <button v-on:click="addToCart">
-        Add to Cart
-    </button>
-    <script>
-        var app = new Vue({
+    
+
+    <script type="text/javascript">
+        var webstore = new Vue({
             el:'#app',
-            data:{ 
+            data: { 
+                sitename:'Vue.js Math Class',
                 subject: "Math",
                 location: "London",
-                price:"$100",
+                price:"£100",
                 spaces:5,
+            },
+            methods: {
+                addToCart: function() {
+                    this.cart.push(this.product.id);
+                    console.log(this.cart);
+                }
             }
         })
     </script>
