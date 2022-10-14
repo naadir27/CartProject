@@ -18,10 +18,11 @@
             <h3 v-text="subject.location"></h3>
             <h3 v-text="subject.price"></h3>
             <h3 v-text="subject.spaces"></h3>
-
+        <form>
             <button v-on:click="addToCart">
                 Add to Cart
             </button>
+        </form>
         </main>
         
     </div>
@@ -38,11 +39,12 @@
                 location: "London",
                 price:"£100",
                 spaces:5,
-                }
+                },
+                cart: [],
             },
             methods: {
                 addToCart: function() {
-                    this.cart.push(this.product.id);
+                    this.cart.push(this.subject.spaces);
                     console.log(this.cart);
                 }
             }
