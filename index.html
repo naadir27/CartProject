@@ -14,7 +14,7 @@
 
         <main>
             <!-- Add the Details for the Module -->
-            <h3 v-text="subject.name"></h3>
+           <h3 v-text="subject.name"></h3>
             <h3 v-text="subject.location"></h3>
             <h3 v-text="subject.price"></h3>
             <h3 v-text="subject.spaces"></h3>
@@ -47,6 +47,7 @@
                     this.cart.push(this.subject.spaces);
                     console.log(this.cart);
                 }
+                
             }
         })
     </script>
