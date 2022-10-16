@@ -44,8 +44,9 @@
             },
             methods: {
                 addToCart: function() {
-                    this.cart.push(this.subject.spaces);
-                    console.log(this.cart);
+                    if(this.spaces>0){
+                        this.spaces--;
+                    }
                 }
                 
             }
