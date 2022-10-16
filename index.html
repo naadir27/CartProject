@@ -1,58 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+   
+    <title>SUBJECT SPACES</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
-    <title>CART</title>
 </head>
 <body>
     <div id="app">
-     
+
         <header>
             <h1 v-text="sitename"></h1>
         </header>
+     
+        <p>Subject :{{subject}}</p>
+        <p>Location :{{location}}</p>
+        <p>Price:{{price}}</p>
+        <p>Spaces:{{spaces}}</p>
+        <button v-on:click="addToCart">
+            Add to Cart
+        </button>
+      
 
-        <main>
-            <!-- Add the Details for the Module -->
-           <h3 v-text="subject.name"></h3>
-            <h3 v-text="subject.location"></h3>
-            <h3 v-text="subject.price"></h3>
-            <h3 v-text="subject.spaces"></h3>
-        <form>
-            <button v-on:click="addToCart">
-                Add to Cart
-            </button>
-        </form>
-        </main>
-        
     </div>
-
-    
-
-    <script type="text/javascript">
-        var webstore = new Vue({
+    <script>
+        var app = new Vue({
             el:'#app',
-            data: { 
-                sitename:'Vue.js Math Class',
-                subject: {
-                name: "Math",
+            data:{ 
+                
+                subject: "Math",
                 location: "London",
                 price:"£100",
-                spaces:5,
-                },
-                cart: [],
+                spaces:"5",
             },
+            cart: [],
+
             methods: {
-                addToCart: function() {
-                    if(this.spaces>0){
+                addToCart: function(){
+                    if(this.spaces > 0){
                         this.spaces--;
                     }
                 }
-                
             }
         })
+
     </script>
-
-
+    
 </body>
 </html>
