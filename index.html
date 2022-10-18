@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   
+<head>   
     <title>SUBJECT SPACES</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
 </head>
+
 <body>
+    
+    <!-- Elements where Vue.js will mount the application --> 
     <div id="app">
+        <main>
+            <img src="./images/math.jpg" width="300" height="200">   
 
-        <header>
-            <h1 v-text="sitename"></h1>
-        </header>
-     
-        <p>Subject :{{subject}}</p>
-        <p>Location :{{location}}</p>
-        <p>Price:{{price}}</p>
-        <p>Spaces:{{spaces}}</p>
-        <button v-on:click="addToCart">
-            Add to Cart
-        </button>
-      
+            <!-- The double curly brackets is the shorter version of 'v-text' -->
+            <p><i>Subject : {{subject}}  </p>
+            <p>   Location : {{location}}</p>
+            <p>   Price : {{price}}      </p>
+            <p>   Spaces: {{spaces}} </i></p>
 
+            <!-- Button will get disabled after the Spaces reach to Zero -->
+            <button v-on:click="addToCart" :disabled="numberOfSpaces==0">
+                Add to Cart
+            </button>   
+        </main>
     </div>
+
+    <!-- Script for Vue.js -->
     <script>
         var app = new Vue({
             el:'#app',
             data:{ 
-                
                 subject: "Math",
                 location: "London",
-                price:"£100",
-                spaces:"5",
+                price: "£100",
+                spaces: "5",
             },
-            cart: [],
-
             methods: {
-                addToCart: function(){
+                addToCart: function (){
                     if(this.spaces > 0){
                         this.spaces--;
                     }
                 }
+            },
+            // Computed properties used to calculate and display values based on a value or set of values in the data model.
+            computed: {
+                numberOfSpaces: function (){
+                    return this.spaces >  0;
+                }
             }
-        })
-
+        });
     </script>
     
 </body>
