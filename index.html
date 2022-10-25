@@ -3,26 +3,30 @@
 <head>   
     <title>SUBJECT SPACES</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
     
     <!-- Elements where Vue.js will mount the application --> 
-    <div id="app">
-        <main>
-            <img src="./images/math.jpg" width="300" height="200">   
-
-            <!-- The double curly brackets is the shorter version of 'v-text' -->
-            <p><i>Subject : {{subject}}  </p>
-            <p>   Location : {{location}}</p>
-            <p>   Price : {{price}}      </p>
-            <p>   Spaces: {{spaces}} </i></p>
-
-            <!-- Button will get disabled after the Spaces reach to Zero -->
-            <button v-on:click="addToCart" :disabled="numberOfSpaces==0">
-                Add to Cart
-            </button>   
-        </main>
+    <div class="container">
+        <div class="leftside" id="app">
+                <main>
+                    
+                    <!-- The double curly brackets is the shorter version of 'v-text' -->
+                 <i><p> Subject : {{subject}}   </p>
+                    <p> Location : {{location}} </p>
+                    <p> Price : {{price}}       </p>
+                    <p> Spaces: {{spaces}}      </p></i><br>
+                    
+                    <!-- Button will get disabled after the Spaces reach to Zero -->
+                    <button v-on:click="addToCart" :disabled="numberOfSpaces == 0">
+                        Add to Cart
+                    </button>   
+                    
+                </main>
+        </div>
+      <div class="rightside"></div>
     </div>
 
     <!-- Script for Vue.js -->
@@ -33,7 +37,7 @@
                 subject: "Math",
                 location: "London",
                 price: "£100",
-                spaces: "5",
+                spaces: 5,
             },
             methods: {
                 addToCart: function (){
