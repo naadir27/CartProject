@@ -5,11 +5,11 @@
     "icons": [
         {
             "src":  "images/icon.png",
-            "size": "512*512",
+            "sizes": "512*512",
             "type": "image/png"
         }
     ],
-        "start_url": "index.html",
-        "display": "fullscreen",
-        "background_color": "#B12A34"
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "background_color": "#B12A34"
 }
