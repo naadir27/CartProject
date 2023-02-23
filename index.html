@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>   
-    <title>SUBJECT SPACES</title>
+    <link rel="'manifest" href="'spaces.webmanifest">
+    <title>Subject Spaces</title>
+    <!-- Website Icon -->
+    <link rel="icon" type="image/x-icon" href="images/icon.png">
+    <!-- Reference for the Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- Reference for the Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
-    <link rel="stylesheet" href="stylesheet.css">
 </head>
+
+<style> 
+    .product{
+        border:1px grey solid;
+        padding:20px;
+        margin:20px;
+        text-align:center;
+    }
+</style>
+
+<script>
+    if('serviceWorker' in navigator){
+        navigator.serviceWorker.register('service-worker.js');
+    };
+</script>
 
 <body>
     
     <!-- Elements where Vue.js will mount the application --> 
-    <div class="container">
-        <div class="leftside" id="app">
+        <div class= "product" id="app">
                 <main>
-                    
+                     <!-- Image -->
+                    <figure>
+                        <!-- bind the 'src' attribute to the 'product.image' in 'data' -->
+                        <img v-bind:src="image" width=200 height=200>
+                    </figure>
+
                     <!-- The double curly brackets is the shorter version of 'v-text' -->
                  <i><p> Subject :  {{subject}}   </p>
                     <p> Location : {{location}}  </p>
@@ -21,13 +45,10 @@
                     
                     <!-- Button will get disabled after the Spaces reach to Zero -->
                     <button v-on:click="addToCart" :disabled="numberOfSpaces == 0">
-                        Add to Cart
-                    </button>   
-                    
+                        <span class="fas fa-cart-plus"></span> Add to Cart
+                    </button>
                 </main>
         </div>
-      <div class="rightside"></div>
-    </div>
 
     <!-- Script for Vue.js -->
     <script>
@@ -38,6 +59,7 @@
                 location: "London",
                 price: "£100",
                 spaces: 5,
+                image: "./images/math.png"
             },
             methods: {
                 addToCart: function (){
