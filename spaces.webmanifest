@@ -1,13 +1,15 @@
 {
-    "name":"Subject Spaces PWA",
-    "short_name": "subject_spaces",
-    "description":"Our Online Subject Spaces",
-    "icons":[{
-            "src":"images/icon.png",
-            "size":"512*512",
-            "type":"image/png"
-            }],
-        "start_url":"index.html",
-        "display":"fullscreen",
+    "name": "Subject Spaces PWA",
+    "short_name": "subjects",
+    "description": "Our Online Subject Spaces",
+    "icons": [
+        {
+            "src":  "images/icon.png",
+            "size": "512*512",
+            "type": "image/png"
+        }
+    ],
+        "start_url": "index.html",
+        "display": "fullscreen",
         "background_color": "#B12A34"
 }
