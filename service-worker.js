@@ -3,7 +3,9 @@ var cacheFiles = [
     'index.html',
     'spaces.webmanifest',
     'images/math.png',
-    'images/icon.png'
+    'images/icon-512.png',
+    'images/icon-192.png'
+
     ];
 
 self.addEventListener('install',(e) => {
