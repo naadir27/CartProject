@@ -1,7 +1,7 @@
 {
-    "name": "Subject Spaces PWA",
+    "name": "Subject PWA",
     "short_name": "subjects",
-    "description": "Our Online Subject Spaces",
+    "description": "PWA app for coursework 3 group",
     "icons": [
         {
             "src":  "images/icon-512.png",
